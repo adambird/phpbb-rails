@@ -6,4 +6,5 @@ class PhpbbTopic < ActiveRecord::Base
   has_many :posts, :class_name => 'PhpbbPost', :foreign_key => 'topic_id', :order => 'post_time'
   has_one :first_post, :class_name => 'PhpbbPost', :primary_key => 'topic_first_post_id', :foreign_key => 'post_id'
   has_one :last_post, :class_name => 'PhpbbPost', :primary_key => 'topic_last_post_id', :foreign_key => 'post_id'
+  belongs_to :forum, :class_name => 'PhpbbForum', :foreign_key => 'forum_id'
 end
