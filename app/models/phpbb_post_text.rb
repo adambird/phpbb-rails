@@ -4,7 +4,7 @@ class PhpbbPostText < ActiveRecord::Base
   
   def clean_body
     if post_text
-      post_text.gsub(/\[(\/)?\w*((:\w*)|(url=[\w]*:\/\/[\w\.\/\-]*))?\]/, '')
+      post_text.gsub(/\[(\/)?\w*((:\w*)|(url=[\w]*:\/\/[\w\.\/\-\%]*))?\]/, '')
     end
   end
 end
